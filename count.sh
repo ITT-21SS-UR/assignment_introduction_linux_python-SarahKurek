@@ -18,4 +18,4 @@ FILE="README"
 # sort words alphabetically; delete duplicate words and count their occurrences; sort words according to count; 
 # take only the top 10 words and print the words without their occurrences
 cat $FILE | tr '[:upper:]' '[:lower:]' | sed 's/[[:space:]]/\n/g' | tr -cd [:alpha:][:space:] | sed '/^$/d'\
-| sort  | uniq -c | sort -r | head -10 | awk '{ print $2 }' 
+| sort  | uniq -c | sort -rn | head -10 | awk '{ print $2 }' 
